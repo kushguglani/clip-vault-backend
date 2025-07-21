@@ -23,7 +23,7 @@ if (process.env.ENABLE_ADMIN_ROUTES === 'true') {
     app.use('/api/admin', adminRoutes);
 }
 cors({
-    origin: ["https://clip-vault-fe.vercel.app/login"],
+    origin: ["https://clip-vault-fe.vercel.app"],
     credentials: true,
   });
 app.use((err, req, res, next) => {
