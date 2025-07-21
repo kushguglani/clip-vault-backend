@@ -1,4 +1,4 @@
-const express = require('express');
+    const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
@@ -22,7 +22,10 @@ if (process.env.ENABLE_ADMIN_ROUTES === 'true') {
     const adminRoutes = require('./routes/adminRoutes');
     app.use('/api/admin', adminRoutes);
 }
-
+cors({
+    origin: ["https://clip-vault-fe.vercel.app/login"],
+    credentials: true,
+  });
 app.use((err, req, res, next) => {
     logger.error({
         message: err.message,
